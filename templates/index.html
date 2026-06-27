@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex items-center justify-between mb-8">
+  <h1 class="text-2xl font-bold text-gray-900">Issues</h1>
+  <form method="post" action="/generate">
+    <button
+      type="submit"
+      onclick="this.disabled=true; this.textContent='Generating…';"
+      class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
+    >
+      Generate Now
+    </button>
+  </form>
+</div>
+
+{% if issues %}
+<div class="space-y-3">
+  {% for issue in issues %}
+  <a href="/issue/{{ issue.id }}"
+     class="flex items-center justify-between bg-white rounded-xl border border-gray-200 px-5 py-4 hover:shadow-sm hover:border-gray-300 transition-all group">
+    <div>
+      <p class="font-semibold text-gray-900 group-hover:text-black">{{ issue.week }}</p>
+      <p class="text-sm text-gray-400 mt-0.5">{{ issue.stories | length }} stories</p>
+    </div>
+    <span class="text-gray-400 text-sm">{{ issue.created_at[:10] }}</span>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-20 text-gray-400">
+  <p class="text-4xl mb-4">📭</p>
+  <p class="text-lg font-medium text-gray-500">No issues yet</p>
+  <p class="text-sm mt-1">Click "Generate Now" or wait for Friday at 4 PM CT.</p>
+</div>
+{% endif %}
+{% endblock %}
