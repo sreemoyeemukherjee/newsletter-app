@@ -51,4 +51,4 @@ The two builds were captured with different UI panels, so this is what's availab
 
 ## Takeaway
 
-Ponytail produced a ~65% smaller codebase for the same app on this task — fewer files (no separate CSS, one route style instead of two), no defensive plumbing the no-skill build added speculatively. Token/cost numbers aren't directly comparable here since the two screenshots come from different panels; capture both builds' full session-cost view next time for an apples-to-apples number.
+Ponytail produced a ~65% smaller codebase for the same app on this task — fewer files (no separate CSS, one route style instead of two), no defensive plumbing the no-skill build added speculatively. Token/cost numbers aren't directly comparable here since the two screenshots come from different panels.
